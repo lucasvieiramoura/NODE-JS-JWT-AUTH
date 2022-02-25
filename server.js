@@ -13,6 +13,10 @@ var corsOptions = {
     origin: 'http://localhost:8081'
 };
 
+// Rotas
+require('./app/routes/auth.routes')(app);
+require('./app/routes/user.routes')(app);
+
 app.use(cors(corsOptions));
 
 app.use(express.json());
