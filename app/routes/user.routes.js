@@ -22,7 +22,7 @@ module.exports = function(app) {
     app.get(
         "/api/test/mod",
         [authJwt.verifyToken, authJwt.isModerator],
-        contoller.moderatorBoard
+        controller.moderatorBoard
     );
     app.get(
         "/api/test/admin",

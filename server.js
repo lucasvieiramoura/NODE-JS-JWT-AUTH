@@ -5,17 +5,13 @@ const db = require("./app/models");
 
 const Role = db.role;
 db.sequelize.sync();//{force: true}).then(() => {     
-  //console.log('Drop and Resync Db');      comentado para não apagar as tabelas ja populadas.
-  //initial();
+  //console.log('Drop and Resync Db');     // comentado para não apagar as tabelas ja populadas.
+ //initial();
 //});
 
 var corsOptions = {
     origin: 'http://localhost:8081'
 };
-
-// Rotas
-require('./app/routes/auth.routes')(app);
-require('./app/routes/user.routes')(app);
 
 app.use(cors(corsOptions));
 
@@ -43,6 +39,11 @@ function initial() {
       name: "admin"
     });
   }
+
+
+// Rotas
+require('./app/routes/auth.routes')(app);
+require('./app/routes/user.routes')(app);
 
 const PORT = process.env.PORT || 8080;
 

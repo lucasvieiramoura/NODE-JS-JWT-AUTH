@@ -4,7 +4,7 @@ const User = db.user;
 const Role = db.role;
 const Op = db.Sequelize.Op;
 var jwt = require('jsonwebtoken');
-var bcrypt = require('bcrypt')
+var bcrypt = require('bcryptjs')
 exports.signup = (req, res) => {
     // Salvar usuário na Banco
     User.create({
@@ -37,7 +37,7 @@ exports.signup = (req, res) => {
     });
 };
 
-exports.sigin =  (req, res) => {
+exports.signin =  (req, res) => {
     User.findOne({
         where: {
             username: req.body.username

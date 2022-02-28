@@ -1,4 +1,4 @@
-const {virifySignUp } = require('../middleware')
+const {verifySignUp } = require('../middleware')
 const controller = require('../controllers/auth.controllers')
 
 module.exports = function(app) {
@@ -17,5 +17,5 @@ module.exports = function(app) {
         ],
         controller.signup
     );
-    app.post('/api/auth/signup', controller.signin);
+    app.post('/api/auth/signin',controller.signin);
 };
