@@ -6,7 +6,7 @@ const db = require("./app/models");
 const Role = db.role;
 db.sequelize.sync();//{force: true}).then(() => {     
   //console.log('Drop and Resync Db');     // comentado para não apagar as tabelas ja populadas.
- //initial();
+  //initial();
 //});
 
 var corsOptions = {
